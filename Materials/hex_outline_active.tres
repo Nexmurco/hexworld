@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b1iqd83pnpcy4"]
+
+[resource]
+cull_mode = 1
+shading_mode = 0
+grow_amount = -1.545

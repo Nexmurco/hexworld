@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://5eckr2miuwnp"]
+
+[ext_resource type="PackedScene" uid="uid://d3ek8nhv6uhyn" path="res://Prefabs/popup.tscn" id="3_kln2b"]
+[ext_resource type="Script" uid="uid://drrqu1daaqvnd" path="res://Scripts/mesh_test.gd" id="3_pbw6q"]
+[ext_resource type="PackedScene" uid="uid://btm8xdyvfpos3" path="res://Prefabs/camera.tscn" id="3_rgh2o"]
+
+[sub_resource type="Sky" id="Sky_idj7w"]
+
+[sub_resource type="Environment" id="Environment_kln2b"]
+background_mode = 1
+background_color = Color(0.6675148, 1.1543388, 0.9972988, 1)
+sky = SubResource("Sky_idj7w")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 2
+tonemap_mode = 2
+tonemap_exposure = 1.2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_v1gob"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kln2b")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.90408254, 0.2865121, 0.31708923, 0, 0.74197584, -0.6704266, -0.42735788, 0.606121, 0.6708074, 0, 0, 0)
+
+[node name="Popup" parent="." instance=ExtResource("3_kln2b")]
+
+[node name="CameraRig" parent="." instance=ExtResource("3_rgh2o")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_v1gob")
+script = ExtResource("3_pbw6q")

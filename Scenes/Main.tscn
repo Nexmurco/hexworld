@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://5eckr2miuwnp"]
+
+[ext_resource type="PackedScene" uid="uid://d3ek8nhv6uhyn" path="res://Prefabs/popup.tscn" id="3_kln2b"]
+[ext_resource type="PackedScene" uid="uid://dp4os56prx03g" path="res://Prefabs/chunk.tscn" id="3_pbw6q"]
+[ext_resource type="PackedScene" uid="uid://btm8xdyvfpos3" path="res://Prefabs/camera.tscn" id="3_rgh2o"]
+
+[sub_resource type="Sky" id="Sky_idj7w"]
+
+[sub_resource type="Environment" id="Environment_kln2b"]
+background_mode = 1
+background_color = Color(0.6675148, 1.1543388, 0.9972988, 1)
+sky = SubResource("Sky_idj7w")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 2
+tonemap_mode = 2
+tonemap_exposure = 1.2
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kln2b")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.90408254, 0.2865121, 0.31708923, 0, 0.74197584, -0.6704266, -0.42735788, 0.606121, 0.6708074, 0, 0, 0)
+
+[node name="Sun2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.39714786, 0.34231126, -0.851526, 0, 0.92783624, 0.37298778, 0.91775465, 0.1481313, -0.3684882, 0, 0, 0)
+light_color = Color(0.22745098, 0.30980393, 1, 1)
+light_energy = 1.174
+
+[node name="Sun3" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.99999845, -0.0006509794, 0.0016193623, 0, 0.9278362, 0.37298778, -0.0017453105, 0.37298718, -0.9278348, 0, 0, 0)
+light_color = Color(0.67852354, 0.66489065, 3.85046e-07, 1)
+light_energy = 1.043
+
+[node name="Sun4" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.55774516, -0.3095844, 0.77011544, 0, 0.9278362, 0.37298778, -0.83001226, 0.20803212, -0.51749617, 0, 0, 0)
+light_color = Color(0.78039217, 0, 0.07450981, 1)
+light_energy = 1.86
+
+[node name="Popup" parent="." instance=ExtResource("3_kln2b")]
+
+[node name="CameraRig" parent="." instance=ExtResource("3_rgh2o")]
+speed = 1.0
+orbit_distance = 900.0
+
+[node name="Chunk" parent="." instance=ExtResource("3_pbw6q")]

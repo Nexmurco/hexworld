@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=4 uid="uid://cwby35gkwogdk"]
+
+[ext_resource type="Script" uid="uid://bolyi6etthghj" path="res://Scripts/hex.gd" id="1_guq5l"]
+[ext_resource type="ArrayMesh" uid="uid://bo4bmtqrrrrrj" path="res://Resources/pent.tres" id="2_ate0u"]
+[ext_resource type="Material" uid="uid://cskng46r4ch6i" path="res://Materials/hex_outline_passive.tres" id="2_guq5l"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_r4ka0"]
+_surfaces = [{
+"aabb": AABB(-0.809, -0.688, -0.05, 1.618, 1.539, 0.05),
+"attribute_data": PackedByteArray("AAAAAM3MTD4AAIA/zcxMPgAAgD+amZk+AACAP4znMD8Vjmc/AACAP+txGD8AAIA/AACAP5qZmT4AAAAAmpmZPgAAAADNzEw+AACAP83MTD4AAAAAzcxMPgAAAADNzMw9KhzPPgAAgD9Zj8M9AACAPwAAAACM5zA/AAAAAJqZmT4AAIA/mpmZPgAAgD/NzMw+AACAP83MzD4AAAAAzczMPgAAAACamZk+AAAAAM3MzD0AAIA/zczMPQAAgD/NzEw+63EYPwAAgD8AAAA/jOcwPwAAgD+M5zA/AAAAAAAAAAAAAIA/AAAAAAAAgD/NzMw9AAAAAIznMD8AAAA/jOcwPyoczz4AAIA/AACAP83MzD0AAAAAzczMPQAAAAAAAAAAAAAAP4znMD8AAEA/AAAAPwAAgD+M5zA/AAAAAM3MzD4AAIA/zczMPgAAgD8AAAA/AAAAAIznMD8AAIA+AAAAPwAAAD+M5zA/AACAPwAAAD8AAAAAAAAAPwAAAADNzMw+"),
+"format": 34359738391,
+"material": ExtResource("2_guq5l"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AAAAv8UgML8AAAAAAAAAv8UgML/NzEy9oBpPv/Cnhj7NzEy9oBpPv/Cnhj7NzEy9AAAAv8UgML/NzEy9AAAAP8UgML/NzEy9oBpPv/Cnhj7NzEy9oBpPv/Cnhj4AAAAAAAAAv8UgML8AAAAAAAAAv8UgML/NzEy9AAAAv8UgML8AAAAAAAAAP8UgML8AAAAAAAAAP8UgML8AAAAAAAAAv8UgML8AAAAAoBpPv/Cnhj4AAAAAoBpPv/Cnhj4AAAAAoBpPv/Cnhj7NzEy9AAAAACPbWT/NzEy9AAAAACPbWT/NzEy9AAAAACPbWT8AAAAAoBpPv/Cnhj4AAAAAAAAAP8UgML8AAAAAAAAAP8UgML/NzEy9AAAAv8UgML/NzEy9AAAAP8UgML/NzEy9oBpPP/Cnhj7NzEy9oBpPv/Cnhj7NzEy9oBpPP/Cnhj4AAAAAoBpPP/Cnhj7NzEy9AAAAP8UgML/NzEy9oBpPv/Cnhj4AAAAAoBpPP/Cnhj4AAAAAAAAAP8UgML8AAAAAAAAAP8UgML/NzEy9AAAAP8UgML8AAAAAoBpPP/Cnhj4AAAAAoBpPP/Cnhj7NzEy9AAAAACPbWT/NzEy9oBpPv/Cnhj7NzEy9AAAAACPbWT8AAAAAAAAAACPbWT/NzEy9oBpPP/Cnhj7NzEy9oBpPv/Cnhj4AAAAAAAAAACPbWT8AAAAAoBpPP/Cnhj4AAAAAoBpPP/Cnhj7NzEy9oBpPP/Cnhj4AAAAAAAAAACPbWT8AAAAAYx+bYP////9jH5tg/////2Mfm2D//////////wAA/7//////AAD/v/////8AAP+/Yx+bYP////9jH5tg/////2Mfm2D//////38AAP//////fwAA//////9/AAD//////3//f////7//f/9/////v/9//3////+/H0ofyv////8fSh/K/////x9KH8r/////H0ofyv////8fSh/K/////x9KH8r//////38AAP//////fwAA//////9/AAD//////////wAA/7//////AAD/v/////8AAP+/m+CbYP////+b4Jtg/////5vgm2D//////3//f////7//f/9/////v/9//3////+/m+CbYP////+b4Jtg/////5vgm2D//////////wAA/7//////AAD/v/////8AAP+/37Ufyv/////ftR/K/////9+1H8r//////3//f////7//f/9/////v/9//3////+/37Ufyv/////ftR/K/////9+1H8r/////")
+}]
+
+[node name="Pent" type="Node3D" node_paths=PackedStringArray("outline_node")]
+script = ExtResource("1_guq5l")
+outline_node = NodePath("Scaler/MeshPentOutline")
+
+[node name="Scaler" type="Node3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="MeshPent" type="MeshInstance3D" parent="Scaler"]
+transform = Transform3D(0.9299973, 0, -0.0023958595, 0, 0.93, 0, 0.0022281492, 0, 0.99999714, 0, 0, 0)
+mesh = ExtResource("2_ate0u")
+skeleton = NodePath("../..")
+
+[node name="MeshPentOutline" type="MeshInstance3D" parent="Scaler"]
+mesh = SubResource("ArrayMesh_r4ka0")
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="Scaler"]
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Scaler/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.025)
+depth = 0.05
+polygon = PackedVector2Array(0, 0.851, -0.809, 0.263, -0.5, -0.688, 0.5, -0.688, 0.809, 0.263)
+
+[connection signal="input_event" from="Scaler/Area3D" to="." method="_on_area_3d_input_event"]
+[connection signal="mouse_entered" from="Scaler/Area3D" to="." method="_on_area_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Scaler/Area3D" to="." method="_on_area_3d_mouse_exited"]

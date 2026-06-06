@@ -1,0 +1,19 @@
+[gd_resource type="ArrayMesh" load_steps=3 format=4 uid="uid://bo4bmtqrrrrrj"]
+
+[ext_resource type="Shader" uid="uid://dikpi7dwnees2" path="res://Shaders/hex_test.gdshader" id="1_4t7ir"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ate0u"]
+render_priority = 0
+shader = ExtResource("1_4t7ir")
+
+[resource]
+_surfaces = [{
+"aabb": AABB(-0.809, -0.688, -0.05, 1.618, 1.539, 0.05),
+"attribute_data": PackedByteArray("AAAAAM3MTD4AAIA/zcxMPgAAgD+amZk+AACAP4znMD8Vjmc/AACAP+txGD8AAIA/AACAP5qZmT4AAAAAmpmZPgAAAADNzEw+AACAP83MTD4AAAAAzcxMPgAAAADNzMw9KhzPPgAAgD9Zj8M9AACAPwAAAACM5zA/AAAAAJqZmT4AAIA/mpmZPgAAgD/NzMw+AACAP83MzD4AAAAAzczMPgAAAACamZk+AAAAAM3MzD0AAIA/zczMPQAAgD/NzEw+63EYPwAAgD8AAAA/jOcwPwAAgD+M5zA/AAAAAAAAAAAAAIA/AAAAAAAAgD/NzMw9AAAAAIznMD8AAAA/jOcwPyoczz4AAIA/AACAP83MzD0AAAAAzczMPQAAAAAAAAAAAAAAP4znMD8AAEA/AAAAPwAAgD+M5zA/AAAAAM3MzD4AAIA/zczMPgAAgD8AAAA/AAAAAIznMD8AAIA+AAAAPwAAAD+M5zA/AACAPwAAAD8AAAAAAAAAPwAAAADNzMw+"),
+"format": 34359738391,
+"material": SubResource("ShaderMaterial_ate0u"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AAAAv8UgML8AAAAAAAAAv8UgML/NzEy9oBpPv/Cnhj7NzEy9oBpPv/Cnhj7NzEy9AAAAv8UgML/NzEy9AAAAP8UgML/NzEy9oBpPv/Cnhj7NzEy9oBpPv/Cnhj4AAAAAAAAAv8UgML8AAAAAAAAAv8UgML/NzEy9AAAAv8UgML8AAAAAAAAAP8UgML8AAAAAAAAAP8UgML8AAAAAAAAAv8UgML8AAAAAoBpPv/Cnhj4AAAAAoBpPv/Cnhj4AAAAAoBpPv/Cnhj7NzEy9AAAAACPbWT/NzEy9AAAAACPbWT/NzEy9AAAAACPbWT8AAAAAoBpPv/Cnhj4AAAAAAAAAP8UgML8AAAAAAAAAP8UgML/NzEy9AAAAv8UgML/NzEy9AAAAP8UgML/NzEy9oBpPP/Cnhj7NzEy9oBpPv/Cnhj7NzEy9oBpPP/Cnhj4AAAAAoBpPP/Cnhj7NzEy9AAAAP8UgML/NzEy9oBpPv/Cnhj4AAAAAoBpPP/Cnhj4AAAAAAAAAP8UgML8AAAAAAAAAP8UgML/NzEy9AAAAP8UgML8AAAAAoBpPP/Cnhj4AAAAAoBpPP/Cnhj7NzEy9AAAAACPbWT/NzEy9oBpPv/Cnhj7NzEy9AAAAACPbWT8AAAAAAAAAACPbWT/NzEy9oBpPP/Cnhj7NzEy9oBpPv/Cnhj4AAAAAAAAAACPbWT8AAAAAoBpPP/Cnhj4AAAAAoBpPP/Cnhj7NzEy9oBpPP/Cnhj4AAAAAAAAAACPbWT8AAAAAYx+bYP////9jH5tg/////2Mfm2D//////////wAA/7//////AAD/v/////8AAP+/Yx+bYP////9jH5tg/////2Mfm2D//////38AAP//////fwAA//////9/AAD//////3//f////7//f/9/////v/9//3////+/H0ofyv////8fSh/K/////x9KH8r/////H0ofyv////8fSh/K/////x9KH8r//////38AAP//////fwAA//////9/AAD//////////wAA/7//////AAD/v/////8AAP+/m+CbYP////+b4Jtg/////5vgm2D//////3//f////7//f/9/////v/9//3////+/m+CbYP////+b4Jtg/////5vgm2D//////////wAA/7//////AAD/v/////8AAP+/37Ufyv/////ftR/K/////9+1H8r//////3//f////7//f/9/////v/9//3////+/37Ufyv/////ftR/K/////9+1H8r/////")
+}]

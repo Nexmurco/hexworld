@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://btm8xdyvfpos3"]
+
+[ext_resource type="Script" uid="uid://b4u2y5flpmo25" path="res://Scripts/camera_rig.gd" id="1_q05pk"]
+[ext_resource type="Script" uid="uid://clxw5n8enbkmd" path="res://Prefabs/camera_mount.gd" id="2_q05pk"]
+
+[sub_resource type="GDScript" id="GDScript_q05pk"]
+script/source = "extends Node3D
+
+# Called when the node enters the scene tree for the first time.
+#func _ready() -> void:
+    #Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+    #pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta: float) -> void:
+    #pass
+
+func rotate_vertical(event, sensitivity):
+    var y_rotation = position.cross(Vector3.UP).normalized()
+    rotate(y_rotation, -event.relative.y * sensitivity)
+    print(\"rotate\")
+"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lits1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q05pk"]
+
+[node name="CameraRig" type="Node3D" node_paths=PackedStringArray("camera_mount", "camera")]
+script = ExtResource("1_q05pk")
+camera_mount = NodePath("CameraMount")
+camera = NodePath("CameraMount/Camera3D")
+
+[node name="CameraMount" type="Node3D" parent="." node_paths=PackedStringArray("camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+script = ExtResource("2_q05pk")
+camera = NodePath("Camera3D")
+
+[node name="Camera3D" type="Camera3D" parent="CameraMount"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+script = SubResource("GDScript_q05pk")
+
+[node name="Stick" type="CSGPolygon3D" parent="CameraMount/Camera3D"]
+visible = false
+transparency = 0.6
+polygon = PackedVector2Array(0.1, 0.1, -0.1, 0.1, -0.1, -0.1, 0.1, -0.1)
+depth = 5.0
+material = SubResource("StandardMaterial3D_lits1")
+
+[node name="Stick" type="CSGPolygon3D" parent="CameraMount"]
+visible = false
+transparency = 0.6
+polygon = PackedVector2Array(0.1, 0.1, -0.1, 0.1, -0.1, -0.1, 0.1, -0.1)
+depth = 5.0
+material = SubResource("StandardMaterial3D_q05pk")

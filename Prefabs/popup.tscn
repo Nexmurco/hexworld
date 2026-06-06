@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3ek8nhv6uhyn"]
+
+[ext_resource type="Script" uid="uid://dulhfm58jri1w" path="res://Scripts/popup.gd" id="1_pgiw8"]
+
+[node name="Popup" type="Node2D" node_paths=PackedStringArray("popup_menu")]
+script = ExtResource("1_pgiw8")
+popup_menu = NodePath("PopupMenu")
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+oversampling_override = 1.0
+
+[connection signal="id_pressed" from="PopupMenu" to="." method="_on_popup_menu_id_pressed"]
+[connection signal="index_pressed" from="PopupMenu" to="." method="_on_popup_menu_index_pressed"]
